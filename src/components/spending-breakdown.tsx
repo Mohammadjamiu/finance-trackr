@@ -20,18 +20,31 @@ interface SpendingBreakdownProps {
 export default function SpendingBreakdown({
   expenses,
 }: SpendingBreakdownProps) {
+  // const COLORS = [
+  //   "#4dabf7",
+  //   "#339af0",
+  //   "#228be6",
+  //   "#1c7ed6",
+  //   "#1971c2",
+  //   "#1864ab",
+  //   "#0c8599",
+  //   "#099268",
+  //   "#2b8a3e",
+  //   "#5c940d",
+  //   "#e67700",
+  // ];
   const COLORS = [
-    "#4dabf7",
-    "#339af0",
-    "#228be6",
-    "#1c7ed6",
-    "#1971c2",
-    "#1864ab",
-    "#0c8599",
-    "#099268",
-    "#2b8a3e",
-    "#5c940d",
-    "#e67700",
+    "#FF6384", // Red
+    "#36A2EB", // Blue
+    "#4BC0C0", // Teal
+    "#FFCE56", // Yellow
+    "#9966FF", // Purple
+    "#2ecc71", // Green
+    "#f39c12", // Orange
+    "#e74c3c", // Strong Red
+    "#1abc9c", // Aqua
+    "#8e44ad", // Deep Purple
+    "#c0392b", // Dark Red
   ];
 
   const data = useMemo(() => {
@@ -80,13 +93,30 @@ export default function SpendingBreakdown({
     <div className="h-[300px] w-full">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
-          <Pie
+          {/* <Pie
             data={data}
             cx="50%"
             cy="50%"
             labelLine={false}
             outerRadius={80}
             fill="#4dabf7"
+            dataKey="value"
+            nameKey="name"
+            label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
+          >
+            {data.map((_, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+          </Pie> */}
+          <Pie
+            data={data}
+            cx="50%"
+            cy="50%"
+            labelLine={false}
+            outerRadius={80}
             dataKey="value"
             nameKey="name"
             label={({ percent }) => `${(percent * 100).toFixed(0)}%`}

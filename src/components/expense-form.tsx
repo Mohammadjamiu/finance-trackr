@@ -2,7 +2,6 @@
 
 import type React from "react";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,21 +12,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import type { Expense } from "./dashboard";
 import { formatNumberWithCommas } from "@/lib/utils";
 import {
-  Utensils,
   Car,
-  ShoppingBag,
-  Receipt,
   Film,
   GraduationCap,
-  Wifi,
   Home,
-  Stethoscope,
   Lightbulb,
   MoreHorizontal,
+  Receipt,
+  ShoppingBag,
+  Stethoscope,
+  Utensils,
+  Wifi,
 } from "lucide-react";
+import { useState } from "react";
+import type { Expense } from "./dashboard";
 
 interface ExpenseFormProps {
   onSubmit: (expense: Omit<Expense, "id">) => void;
@@ -139,10 +139,10 @@ export default function ExpenseForm({ onSubmit, onCancel }: ExpenseFormProps) {
       <div className="space-y-2">
         <Label htmlFor="category">Category</Label>
         <Select value={category} onValueChange={setCategory} required>
-          <SelectTrigger id="category">
+          <SelectTrigger id="category" className="">
             <SelectValue placeholder="Select category" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="bg-white">
             {categoryOptions.map((option) => (
               <SelectItem key={option.value} value={option.value}>
                 <div className="flex items-center">

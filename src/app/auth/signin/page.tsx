@@ -30,6 +30,7 @@ export default function SignIn() {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl">Welcome to Finance Tracker</CardTitle>
+          <span className="text-xs text-primary">By Muazzam</span>
           <CardDescription>
             Sign in to manage your expenses and track your budget
           </CardDescription>

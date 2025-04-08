@@ -1342,7 +1342,11 @@ export default function Dashboard() {
   return (
     <div className="container mx-auto p-4 max-w-5xl pb-20 md:pb-4">
       <header className="flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-medium">Finance Tracker</h1>
+        <h1 className="text-2xl font-medium">
+          Finance Tracker
+          <span className="text-sm text-primary block">By Muazzam</span>
+        </h1>
+
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
